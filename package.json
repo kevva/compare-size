@@ -12,10 +12,14 @@
   "engines": {
     "node": ">=0.10.0"
   },
+  "bin": {
+    "compare-size": "cli.js"
+  },
   "scripts": {
     "test": "node test/test.js"
   },
   "files": [
+    "cli.js",
     "index.js"
   ],
   "keywords": [
@@ -24,6 +28,9 @@
     "fs",
     "size"
   ],
+  "dependencies": {
+    "pretty-bytes": "^1.0.1"
+  },
   "devDependencies": {
     "ava": "^0.0.4"
   }

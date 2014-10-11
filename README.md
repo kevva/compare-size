@@ -26,6 +26,22 @@ compareSize.sync('foo.zip', 'bar.zip');
 //=> { foo.zip: 439, bar.zip: 325, difference: 114 }
 ```
 
+## CLI
+
+```sh
+$ npm install --global compare-size
+```
+
+```sh
+$ compare-size --help
+
+Usage
+  compare-size <file> <file>
+
+Example
+  compare-size foo.zip bar.tar.gz
+```
+
 ## License
 
 MIT © [Kevin Mårtensson](https://github.com/kevva)
