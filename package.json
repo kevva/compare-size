@@ -1,0 +1,30 @@
+{
+  "name": "compare-size",
+  "version": "1.0.0",
+  "description": "Compare size between two files",
+  "license": "MIT",
+  "repository": "kevva/compare-size",
+  "author": {
+    "name": "Kevin Mårtensson",
+    "email": "kevinmartensson@gmail.com",
+    "url": "https://github.com/kevva"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "compare",
+    "file",
+    "fs",
+    "size"
+  ],
+  "devDependencies": {
+    "ava": "^0.0.4"
+  }
+}
