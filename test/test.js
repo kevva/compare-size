@@ -11,7 +11,7 @@ test('compare size between two files', function (t) {
 	var b = path.join(__dirname, 'fixtures', 'test-b.txt');
 
 	compare(a, b, function (err, res) {
-		t.assert(!err);
+		t.assert(!err, err);
 		t.assert(res[a] === 9);
 		t.assert(res[b] === 7);
 		t.assert(res.difference === 2);
