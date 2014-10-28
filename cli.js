@@ -11,11 +11,11 @@ var prettyBytes = require('pretty-bytes');
 
 var cli = meow({
 	help: [
-		'  Usage',
-		'    compare-size <file> <file>',
+		'Usage',
+		'  compare-size <file> <file>',
 		'',
-		'  Example',
-		'    compare-size foo.zip bar.tar.gz'
+		'Example',
+		'  compare-size foo.zip bar.tar.gz'
 	].join('\n')
 });
 
@@ -27,8 +27,8 @@ if (cli.input.length < 2) {
 	console.error([
 		'Provide two files to compare',
 		'',
-		'  Example',
-		'    compare-size foo.zip bar.tar.gz'
+		'Example',
+		'  compare-size foo.zip bar.tar.gz'
 	].join('\n'));
 
 	process.exit(1);
