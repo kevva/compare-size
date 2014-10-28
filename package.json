@@ -1,6 +1,6 @@
 {
   "name": "compare-size",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Compare size between two files",
   "license": "MIT",
   "repository": "kevva/compare-size",
