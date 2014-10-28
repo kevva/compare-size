@@ -2,58 +2,51 @@
 'use strict';
 
 var compareSize = require('./');
-var input = process.argv.slice(2);
-var pkg = require('./package.json');
+var meow = require('meow');
 var prettyBytes = require('pretty-bytes');
 
 /**
- * Help screen
+ * Initialize CLI
  */
 
-function help() {
-	console.log([
-		'',
-		'  ' + pkg.description,
-		'',
+var cli = meow({
+	help: [
 		'  Usage',
 		'    compare-size <file> <file>',
 		'',
 		'  Example',
 		'    compare-size foo.zip bar.tar.gz'
+	].join('\n')
+});
+
+/**
+ * Check for arguments
+ */
+
+if (cli.input.length < 2) {
+	console.error([
+		'Provide two files to compare',
+		'',
+		'  Example',
+		'    compare-size foo.zip bar.tar.gz'
 	].join('\n'));
-}
 
-/**
- * Show help
- */
-
-if (input.indexOf('-h') !== -1 || input.indexOf('--help') !== -1) {
-	help();
-	return;
-}
-
-/**
- * Show package version
- */
-
-if (input.indexOf('-v') !== -1 || input.indexOf('--version') !== -1) {
-	console.log(pkg.version);
-	return;
+	process.exit(1);
 }
 
 /**
  * Run
  */
 
-compareSize(input[0], input[1], function (err, res) {
+compareSize(cli.input[0], cli.input[1], function (err, res) {
 	if (err) {
-		console.error(err);
+		console.error(err.message);
 		process.exit(1);
 	}
 
 	console.log([
-		input[0] + ': ' + prettyBytes(res[input[0]]),
-		input[1] + ': ' + prettyBytes(res[input[1]]),
+		cli.input[0] + ': ' + prettyBytes(res[cli.input[0]]),
+		cli.input[1] + ': ' + prettyBytes(res[cli.input[1]]),
 		'Difference: ' + prettyBytes(res.difference)
 	].join('\n'));
 });
