@@ -2,15 +2,6 @@
 
 var fs = require('fs');
 
-/**
- * Compare size between two files
- *
- * @param {String} a
- * @param {String} b
- * @param {Function} cb
- * @api public
- */
-
 module.exports = function (a, b, cb) {
 	var ret = {};
 
@@ -35,14 +26,6 @@ module.exports = function (a, b, cb) {
 		});
 	});
 };
-
-/**
- * Synchronously compare size between two files
- *
- * @param {String} a
- * @param {String} b
- * @api public
- */
 
 module.exports.sync = function (a, b) {
 	var ret = {};

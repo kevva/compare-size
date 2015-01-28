@@ -36,10 +36,10 @@ $ npm install --global compare-size
 $ compare-size --help
 
 Usage
-  compare-size <file> <file>
+  $ compare-size <file> <file>
 
 Example
-  compare-size foo.zip bar.tar.gz
+  $ compare-size foo.zip bar.tar.gz
 ```
 
 ## License
