@@ -19,11 +19,11 @@ compareSize('foo.zip', 'bar.zip', function (err, res) {
 	}
 
 	console.log(res);
-	//=> { foo.zip: 439, bar.zip: 325, difference: 114 }
+	//=> {foo.zip: 439, bar.zip: 325, difference: 114}
 });
 
 compareSize.sync('foo.zip', 'bar.zip');
-//=> { foo.zip: 439, bar.zip: 325, difference: 114 }
+//=> {foo.zip: 439, bar.zip: 325, difference: 114}
 ```
 
 ## CLI
