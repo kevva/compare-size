@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 'use strict';
 
-var compareSize = require('./');
 var meow = require('meow');
 var prettyBytes = require('pretty-bytes');
+var compareSize = require('./');
 
 var cli = meow({
 	help: [
