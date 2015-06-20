@@ -12,7 +12,7 @@ var cli = meow({
 		'',
 		'Example',
 		'  $ compare-size foo.zip bar.tar.gz'
-	].join('\n')
+	]
 });
 
 if (cli.input.length < 2) {

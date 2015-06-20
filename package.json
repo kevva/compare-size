@@ -29,7 +29,7 @@
     "size"
   ],
   "dependencies": {
-    "meow": "^2.0.0",
+    "meow": "^3.3.0",
     "pretty-bytes": "^1.0.1"
   },
   "devDependencies": {
