@@ -10,7 +10,7 @@
     "url": "https://github.com/kevva"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=4"
   },
   "bin": {
     "compare-size": "cli.js"
@@ -30,6 +30,7 @@
   ],
   "dependencies": {
     "meow": "^3.3.0",
+    "pify": "^2.3.0",
     "pretty-bytes": "^1.0.1"
   },
   "devDependencies": {

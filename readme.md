@@ -13,10 +13,10 @@ $ npm install --save compare-size
 ## Usage
 
 ```js
-var compareSize = require('compare-size');
+const compareSize = require('compare-size');
 
-compareSize('foo.zip', 'bar.zip', function (err, res) {
-	console.log(res);
+compareSize('foo.zip', 'bar.zip').then(data => {
+	console.log(data);
 	//=> {foo.zip: 439, bar.zip: 325, difference: 114}
 });
 
@@ -27,9 +27,9 @@ compareSize.sync('foo.zip', 'bar.zip');
 
 ## API
 
-### compareSize(a, b, callback)
+### compareSize(a, b)
 
-Compares size between two files.
+Compares size between two files. Returns a promise for an object with the stats difference.
 
 #### a
 
@@ -42,16 +42,6 @@ Path to the first file.
 Type: `string`
 
 Path to the second file.
-
-#### callback(err, stats)
-
-Type: `function`
-
-##### stats
-
-Type: `object`
-
-Contains the difference in size between the files in bytes and also how big each file is.
 
 
 ## CLI

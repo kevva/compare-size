@@ -1,34 +1,25 @@
 'use strict';
+const fs = require('fs');
+const pify = require('pify');
+const lstat = pify(fs.lstat, Promise);
 
-var fs = require('fs');
+module.exports = (a, b) => {
+	const ret = {};
 
-module.exports = function (a, b, cb) {
-	var ret = {};
-
-	fs.lstat(a, function (err, stats) {
-		if (err) {
-			cb(err);
-			return;
-		}
-
-		ret[a] = stats.size;
-
-		fs.lstat(b, function (err, stats) {
-			if (err) {
-				cb(err);
-				return;
-			}
-
+	return lstat(a)
+		.then(stats => {
+			ret[a] = stats.size;
+			return lstat(b);
+		})
+		.then(stats => {
 			ret[b] = stats.size;
 			ret.difference = Math.abs(ret[a] - ret[b]);
-
-			cb(null, ret);
+			return ret;
 		});
-	});
 };
 
 module.exports.sync = function (a, b) {
-	var ret = {};
+	const ret = {};
 
 	ret[a] = fs.lstatSync(a).size;
 	ret[b] = fs.lstatSync(b).size;
