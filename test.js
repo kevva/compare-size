@@ -1,12 +1,12 @@
 import path from 'path';
 import test from 'ava';
-import fn from '../';
+import m from './';
 
 const a = path.join(__dirname, 'fixtures', 'test-a.txt');
 const b = path.join(__dirname, 'fixtures', 'test-b.txt');
 
 test('compare size between two files', async t => {
-	const data = await fn(a, b);
+	const data = await m(a, b);
 
 	t.is(data[a], 9);
 	t.is(data[b], 7);
@@ -14,7 +14,7 @@ test('compare size between two files', async t => {
 });
 
 test('synchronously compare size between two files', t => {
-	const data = fn.sync(a, b);
+	const data = m.sync(a, b);
 
 	t.is(data[a], 9);
 	t.is(data[b], 7);

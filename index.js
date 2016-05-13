@@ -1,7 +1,7 @@
 'use strict';
 const fs = require('fs');
 const pify = require('pify');
-const lstat = pify(fs.lstat, Promise);
+const lstat = pify(fs.lstat);
 
 module.exports = (a, b) => {
 	const ret = {};
@@ -18,7 +18,7 @@ module.exports = (a, b) => {
 		});
 };
 
-module.exports.sync = function (a, b) {
+module.exports.sync = (a, b) => {
 	const ret = {};
 
 	ret[a] = fs.lstatSync(a).size;
