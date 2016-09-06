@@ -44,21 +44,9 @@ Type: `string`
 Path to the second file.
 
 
-## CLI
+## Related
 
-```
-$ npm install --global compare-size
-```
-
-```
-$ compare-size --help
-
-  Usage
-    $ compare-size <file> <file>
-
-  Example
-    $ compare-size foo.zip bar.tar.gz
-```
+* [compare-size-cli](https://github.com/kevva/compare-size-cli) - CLI for this module
 
 
 ## License

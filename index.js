@@ -1,6 +1,7 @@
 'use strict';
 const fs = require('fs');
 const pify = require('pify');
+
 const lstat = pify(fs.lstat);
 
 module.exports = (a, b) => {
